@@ -1,10 +1,7 @@
-# Image-Steganography-CLI-Tool
-
-## 📸 Cipher-Shadow-Image-CLI 🔐
+# 📸 Image-Steganography-CLI-Tool 🔐
 
 A Python-based **Image Steganography Command Line Tool** that allows you to
 encrypt a secret message and embed it inside an **image (PNG)** using **LSB steganography**, and later **extract & decrypt** it securely using a password.
-
 This CLI tool is built for **terminal users**, **automation**, and **security-focused experimentation**, combining **strong cryptography with invisible data hiding.**
 
 ---
@@ -12,10 +9,10 @@ This CLI tool is built for **terminal users**, **automation**, and **security-fo
 ## 🧱 Project Structure
 
 ```bash
-Cipher-Shadow-Image-CLI/
+Image-Steganography-CLI-Tool/
 │
 ├── image_steganography.py      # Image steganography CLI tool
-└── README.md                 # Project documentation
+└── README.md                   # Project documentation
 ```
 
 ---
@@ -24,7 +21,7 @@ Cipher-Shadow-Image-CLI/
 
 ### 🔐 Encryption & Embedding
 
-- Encrypts message using **Fernet (AES-128 authenticated encryption)**
+- Encrypts message using **Fernet (AES-128 encryption)**
 - Derives key from password using **PBKDF2-HMAC (SHA256)**
 - Embeds encrypted payload into WAV audio using **LSB (Least Significant Bit)**
 - Supports:
@@ -38,7 +35,7 @@ Cipher-Shadow-Image-CLI/
 - Decrypts message securely
 - Outputs decrypted message to:
     - Terminal or
-    - File (binary-safe)
+    - File
 
 ---
 
@@ -72,13 +69,13 @@ Standard libraries like `os`, `secrets`, `argparse`, `base64`, and `struct` are 
 **1. Clone the repository:**
 
 ```bash
-git clone https://github.com/ShakalBhau0001/Cipher-Shadow.git
+git clone https://github.com/ShakalBhau0001/Image-Steganography-CLI-Tool.git
 ```
 
 **2. Enter the project folder:**
 
 ```bash
-cd Cipher-Shadow-Image-CLI
+cd Image-Steganography-CLI-Tool
 ```
 
 **3. Run the GUI:**
