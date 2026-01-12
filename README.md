@@ -14,7 +14,7 @@ This CLI tool is built for **terminal users**, **automation**, and **security-fo
 ```bash
 Cipher-Shadow-Image-CLI/
 │
-├── image_encrypt_cli.py      # Image steganography CLI tool
+├── image_steganography.py      # Image steganography CLI tool
 └── README.md                 # Project documentation
 ```
 
@@ -84,7 +84,7 @@ cd Cipher-Shadow-Image-CLI
 **3. Run the GUI:**
 
 ```bash
-python image_encrypt_cli.py
+python image_steganography.py
 ```
 
 ---
@@ -96,21 +96,21 @@ python image_encrypt_cli.py
 #### 1. Text Encrypt & Embed
 
 ``` bash
-python image_encrypt_cli.py encrypt --in-image cover.png --out-image stego.png --password mypass --message "secret"
+python image_steganography.py encrypt --in-image cover.png --out-image stego.png --password mypass --message "secret"
 ```
 
 ```bash
-python image_encrypt_cli.py encrypt --in-image inputfile.png --out-image outputfile.png --password yourpassword --message "Enter Your Secret Message"
+python image_steganography.py encrypt --in-image inputfile.png --out-image outputfile.png --password yourpassword --message "Enter Your Secret Message"
 ```
 
 #### 2. Text File Encrypt & Embed
 
 ``` bash
-python image_encrypt_cli.py encrypt --in-image cover.png --out-image stego.png --password mypass --message-file secret.txt
+python image_steganography.py encrypt --in-image cover.png --out-image stego.png --password mypass --message-file secret.txt
 ```
 
 ```bash
-python image_encrypt_cli.py encrypt --in-image inputfile.png --out-image outputfile.png --password yourpassword --message-file Add Your Secret txt file
+python image_steganography.py encrypt --in-image inputfile.png --out-image outputfile.png --password yourpassword --message-file Add Your Secret txt file
 ```
 
 ### 🔓 Decrypt & Extract
@@ -118,21 +118,21 @@ python image_encrypt_cli.py encrypt --in-image inputfile.png --out-image outputf
 #### 1. Text Decrypt & Extract
 
 ``` bash
-python image_encrypt_cli.py decrypt --in-image stego.png --password mypass
+python image_steganography.py decrypt --in-image stego.png --password mypass
 ```
 
 ```bash
-python image_encrypt_cli.py decrypt --in-image outputfile.png --password yourpassword
+python image_steganography.py decrypt --in-image outputfile.png --password yourpassword
 ```
 
 #### 2. Text File Decrypt & Extract
 
 ```bash
-python image_encrypt_cli.py decrypt --in-image stego.png --password mypass123 --out-file output.txt
+python image_steganography.py decrypt --in-image stego.png --password mypass123 --out-file output.txt
 ```
 
 ```bash
-python image_encrypt_cli.py decrypt --in-image outputfile.png --password yourpassword --out-file filename.txt
+python image_steganography.py decrypt --in-image outputfile.png --password yourpassword --out-file filename.txt
 ```
 
 ---
@@ -197,6 +197,37 @@ python image_encrypt_cli.py decrypt --in-image outputfile.png --password yourpas
 - Support for JPEG (with DCT-based steganography)
 - Multi-file embedding
 - Optional compression before encryption
+
+---
+
+## 📦 Extended Version
+
+This repository focuses on a **specific steganography technique** implemented
+as a **command-line (CLI) learning project**.
+
+The goal of this project is to:
+- Understand how steganography works at a practical level  
+- Experiment with data hiding techniques  
+- Learn how CLI-based security tools are structured  
+
+For a **more advanced and combined implementation** that includes:
+- Image steganography  
+- Audio steganography  
+- File encryption support  
+
+please refer to:
+
+🔗 **[StegaVault-CLI](https://github.com/ShakalBhau0001/StegaVault-CLI) (WIP)**
+
+---
+
+## ⚠️ Disclaimer
+
+This project is intended for **educational and research purposes only**.
+
+It is **not designed for real-world secure communication**.
+Steganography alone does not guarantee secrecy and should not be considered
+a replacement for proper cryptographic security.
 
 ---
 
