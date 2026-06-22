@@ -37,7 +37,6 @@ def bytes_to_bits(data: bytes):
 
 def embed_payload_in_image(input_image: str, payload: bytes, output_image: str):
     img = Image.open(input_image)
-
     if img.mode not in ("RGB", "RGBA"):
         img = img.convert("RGBA")
     else:
@@ -46,7 +45,6 @@ def embed_payload_in_image(input_image: str, payload: bytes, output_image: str):
     width, height = img.size
     total_channels = width * height * 3
     bits_needed = len(payload) * 8
-
     if bits_needed > total_channels:
         raise ValueError(
             f"Payload too large: needs {bits_needed} bits, image supports {total_channels} bits"
@@ -130,10 +128,8 @@ def encrypt_image(args):
     salt = secrets.token_bytes(16)
     key = derive_fernet_key_from_password(args.password, salt)
     encrypted = Fernet(key).encrypt(message_bytes)
-
     payload = make_payload(encrypted, salt)
     embed_payload_in_image(args.in_image, payload, args.out_image)
-
     print(f"[+] Message encrypted & embedded → {args.out_image}")
 
 
@@ -147,7 +143,6 @@ def decrypt_image(args):
 
     salt = header[4:20]
     enc_len = struct.unpack(">I", header[20:24])[0]
-
     full_payload = extract_payload_from_image(args.in_image, 24 + enc_len)
     salt2, encrypted = parse_payload(full_payload)
 
@@ -168,25 +163,19 @@ def decrypt_image(args):
             print(decrypted)
 
 
-# CLI
-
-
 def main():
     parser = argparse.ArgumentParser(description="Image Steganography CLI")
     sub = parser.add_subparsers(dest="cmd", required=True)
-
     enc = sub.add_parser("encrypt", help="Encrypt & embed message into image")
     enc.add_argument("--in-image", required=True)
     enc.add_argument("--out-image", required=True)
     enc.add_argument("--password", required=True)
     enc.add_argument("--message")
     enc.add_argument("--message-file")
-
     dec = sub.add_parser("decrypt", help="Extract & decrypt message from image")
     dec.add_argument("--in-image", required=True)
     dec.add_argument("--password", required=True)
     dec.add_argument("--out-file")
-
     args = parser.parse_args()
 
     if args.cmd == "encrypt":
@@ -197,4 +186,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-  
