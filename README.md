@@ -249,7 +249,7 @@ For a **more advanced and combined implementation** that includes:
 
 please refer to:
 
-🔗 **[StegaVault-CLI](https://github.com/ShakalBhau0001/StegaVault-CLI) (WIP)**
+> 🔗 **[StegaVault-CLI](https://github.com/ShakalBhau0001/StegaVault-CLI)**
 
 ---
 
