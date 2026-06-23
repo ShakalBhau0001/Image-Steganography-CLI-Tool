@@ -11,8 +11,11 @@ This CLI tool is built for **terminal users**, **automation**, and **security-fo
 ```bash
 Image-Steganography-CLI-Tool/
 │
-├── image_steganography.py      # Image steganography CLI tool
-└── README.md                   # Project documentation
+├── assets/             # Screenshots
+├── main.py             # Basic CLI application
+├── interactive.py      # Rich CLI Version
+├── requirements.txt    # Project Dependancies
+└── README.md           # Project documentation
 ```
 
 ---
@@ -37,6 +40,17 @@ Image-Steganography-CLI-Tool/
     - Terminal or
     - File
 
+### 🎨 Rich CLI Interface
+
+- Colored terminal output
+- Structured key display tables
+- Styled panels for encoding/decoding results
+- Better user experience and readability
+
+### ⚡ Dual Mode Support
+- 🧼 Basic CLI → Lightweight, no dependencies
+- 🎨 Rich CLI → Enhanced UI with colors and panels
+
 ---
 
 ## 🛠 Technologies Used
@@ -49,6 +63,7 @@ Image-Steganography-CLI-Tool/
 | **cryptography (Fernet + PBKDF2HMAC)** | Secure encryption               |
 | **LSB Steganography**                  | Data hiding technique           |
 | **struct / secrets / base64**          | Payload & cryptographic helpers |
+| **Rich**                               | Interactive CLI interface       |
 
 ---
 
@@ -57,31 +72,51 @@ Image-Steganography-CLI-Tool/
 Make sure you install required dependencies:
 
 ```bash
-pip install cryptography pillow
+pip install cryptography pillow rich
 ```
 
-Standard libraries like `os`, `secrets`, `argparse`, `base64`, and `struct` are already included with Python.
+> Standard libraries like `os`, `secrets`, `argparse`, `base64`, and `struct` are already included with Python.
 
 ---
 
 ## ▶️ How to Run
 
-**1. Clone the repository:**
+## 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/ShakalBhau0001/Image-Steganography-CLI-Tool.git
 ```
 
-**2. Enter the project folder:**
+## 2️⃣ Enter the project directory
 
 ```bash
 cd Image-Steganography-CLI-Tool
 ```
 
-**3. Run the GUI:**
+### 3️⃣ Install Dependencies
 
 ```bash
-python image_steganography.py
+pip install rich cryptography pillow
+```
+
+**OR**
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Running the Project
+
+#### Basic CLI Version
+
+```bash
+python main.py
+```
+
+#### Rich Interactive Version
+
+```bash
+python interactive.py
 ```
 
 ---
@@ -93,21 +128,21 @@ python image_steganography.py
 #### 1. Text Encrypt & Embed
 
 ``` bash
-python image_steganography.py encrypt --in-image cover.png --out-image stego.png --password mypass --message "secret"
+python main.py encrypt --in-image cover.png --out-image stego.png --password mypass --message "secret"
 ```
 
 ```bash
-python image_steganography.py encrypt --in-image inputfile.png --out-image outputfile.png --password yourpassword --message "Enter Your Secret Message"
+python main.py encrypt --in-image inputfile.png --out-image outputfile.png --password yourpassword --message "Enter Your Secret Message"
 ```
 
 #### 2. Text File Encrypt & Embed
 
 ``` bash
-python image_steganography.py encrypt --in-image cover.png --out-image stego.png --password mypass --message-file secret.txt
+python main.py encrypt --in-image cover.png --out-image stego.png --password mypass --message-file secret.txt
 ```
 
 ```bash
-python image_steganography.py encrypt --in-image inputfile.png --out-image outputfile.png --password yourpassword --message-file Add Your Secret txt file
+python main.py encrypt --in-image inputfile.png --out-image outputfile.png --password yourpassword --message-file Add Your Secret txt file
 ```
 
 ### 🔓 Decrypt & Extract
@@ -115,21 +150,21 @@ python image_steganography.py encrypt --in-image inputfile.png --out-image outpu
 #### 1. Text Decrypt & Extract
 
 ``` bash
-python image_steganography.py decrypt --in-image stego.png --password mypass
+python main.py decrypt --in-image stego.png --password mypass
 ```
 
 ```bash
-python image_steganography.py decrypt --in-image outputfile.png --password yourpassword
+python main.py decrypt --in-image outputfile.png --password yourpassword
 ```
 
 #### 2. Text File Decrypt & Extract
 
 ```bash
-python image_steganography.py decrypt --in-image stego.png --password mypass123 --out-file output.txt
+python main.py decrypt --in-image stego.png --password mypass123 --out-file output.txt
 ```
 
 ```bash
-python image_steganography.py decrypt --in-image outputfile.png --password yourpassword --out-file filename.txt
+python main.py decrypt --in-image outputfile.png --password yourpassword --out-file filename.txt
 ```
 
 ---
@@ -225,6 +260,12 @@ This project is intended for **educational and research purposes only**.
 It is **not designed for real-world secure communication**.
 Steganography alone does not guarantee secrecy and should not be considered
 a replacement for proper cryptographic security.
+
+---
+
+## 📸 Preview
+
+![Rich CLI Preview](assets/STEG.png)
 
 ---
 
