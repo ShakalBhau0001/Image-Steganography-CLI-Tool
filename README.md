@@ -265,7 +265,22 @@ a replacement for proper cryptographic security.
 
 ## 📸 Preview
 
-![Rich CLI Preview](assets/STEG.png)
+### 1. **Encryption**
+
+![Rich CLI Preview](assets/STEG-1.png)
+
+### 2. **Decryption**
+
+![Rich CLI Preview](assets/STEG-2.png)
+
+### 3. **Info**
+
+![Rich CLI Preview](assets/STEG-3.png)
+
+### 4. **Exit**
+
+![Rich CLI Preview](assets/STEG-0.png)
+
 
 ---
 
